@@ -145,11 +145,11 @@
 	func(PXE, pxe, na) \
 	func(DHCP, dhcp, na)
 
-#define KERNEL_ADDR_R	__stringify(0x800000)
-#define FDT_ADDR_R	__stringify(0x100000)
-#define RAMDISK_ADDR_R	__stringify(0x1800000)
-#define SCRIPT_ADDR_R	__stringify(0x200000)
-#define PXEFILE_ADDR_R	__stringify(0x300000)
+#define KERNEL_ADDR_R	__stringify(0x2080000)
+#define FDT_ADDR_R	__stringify(0x2040000)
+#define RAMDISK_ADDR_R	__stringify(0x2880000)
+#define SCRIPT_ADDR_R	__stringify(0x3000000)
+#define PXEFILE_ADDR_R	__stringify(0x3100000)
 
 #define LOAD_ADDRESS_ENV_SETTINGS \
 	"kernel_addr_r=" KERNEL_ADDR_R "\0" \
