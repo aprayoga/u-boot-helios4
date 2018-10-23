@@ -24,6 +24,8 @@
 	aliases {
 		/* So that mvebu u-boot can update the MAC addresses */
 		ethernet1 = &eth0;
+		i2c0 = &i2c0;
+		i2c1 = &i2c1;
 	};
 
 	chosen {
