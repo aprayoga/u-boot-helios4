@@ -26,6 +26,7 @@
 		ethernet1 = &eth0;
 		i2c0 = &i2c0;
 		i2c1 = &i2c1;
+		spi1 = &spi1;
 	};
 
 	chosen {
@@ -244,6 +245,7 @@
 					     &microsom_spi1_cs_pins>;
 				pinctrl-names = "default";
 				status = "okay";
+				u-boot,dm-spl;
 			};
 
 			sdhci@d8000 {
@@ -307,4 +309,9 @@
 			};
 		};
 	};
+};
+
+&w25q32 {
+	status = "okay";
+	u-boot,dm-spl;
 };
