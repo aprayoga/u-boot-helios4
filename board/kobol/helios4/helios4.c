@@ -114,6 +114,13 @@ int board_init(void)
 	/* Address of boot parameters */
 	gd->bd->bi_boot_params = mvebu_sdram_bar(0) + 0x100;
 
+	/* GPIO 19 controls the uSOM onboard phy reset */
+	clrbits_le32(MVEBU_GPIO0_BASE + 0x0, BIT(19));
+	clrbits_le32(MVEBU_GPIO0_BASE + 0x4, BIT(19));
+	mdelay(1);
+	setbits_le32(MVEBU_GPIO0_BASE + 0x0, BIT(19));
+	mdelay(10);
+
 	return 0;
 }
 
